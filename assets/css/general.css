@@ -5,12 +5,12 @@ body {
 .header {
     background: url("../img/bg.png") top no-repeat;
     background-size: 100%;
-    height: auto;
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .header__bg {
     font-size: 40px;
     text-decoration: none;
@@ -228,4 +228,91 @@ body {
     display: block;
     width: 20px;
     height: 20px;
+    fill: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+    .header {
+        height: 150px;
+        align-items: flex-end;
+    }
+    .banners {
+        margin-top: 75px;
+    }
+    
+    .target {
+        top: 160px;
+        font-size: 30px;
+        letter-spacing: 2px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .target p {
+        text-align: center;
+    }
+
+    .banners__flex {
+        flex-direction: column;
+        min-height: auto;
+        max-height: auto;
+    }
+
+    .banners__flex div {
+        width: 100%;
+    }
+
+    .banners__left img {
+        width: 100%;
+        position: relative;
+        top: initial;
+        left: initial;
+    }
+
+    .banners__button {
+        top: 70px;
+        left: 70%;
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .banners__center article p {
+        font-size: 30px;
+        padding: 20px 20px 70px;
+    }
+
+    .banners__right {
+        display: none;
+    }
+
+    .form {
+        padding: 30px 0 70px;
+    }
+
+    .form > div {
+        width: 100%;
+    }
+
+    .form__input {
+        flex-direction: column;
+        align-items: center;
+    }
+    .form__input input {
+        width: 100%;
+    }
+
+    .form__input-name, .form__input-email {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .form__input #name {
+        border: 1px solid #5e5f5f;
+    }
+
+    #form_submit {
+        right: 50%;
+        transform: translate(50%);
+    }
 }
