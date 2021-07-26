@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 const dogDescription  = $this.closest('.dogs').querySelector('article').textContent;
                 const dogPrice  = $this.closest('.dogs').querySelector('p').textContent;
                 const dogPhoto  = $this.closest('.dogs').querySelector('img').getAttribute('src');
+                console.log(dogPhoto);
                 let currentDogs = {
                     "index": dogIndex,
                     "name": dogName,
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     localStorage.setItem('Products', JSON.stringify(old.concat(data)));
                 }
                 appendToStorage('Products', convertDataDogs);
+                updateMiniCart();
             });
         });
     }
@@ -93,34 +95,40 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
     };
 
-    let getProducts =  (JSON.parse(localStorage.getItem('Products')) ? JSON.parse(localStorage.getItem('Products')) : '');
-    [...getProducts].map(dogs => {
-        const dogIndexMiniCart = dogs.index;
-        const dogNameMiniCart = dogs.name;
-        const dogDescMiniCart = dogs.desc;
-        const dogPriceMiniCart = dogs.price;
-        const dogPhotoMiniCart = dogs.photo;
+    function updateMiniCart() {
+        let getProducts =  (localStorage.getItem('Products') ? JSON.parse(localStorage.getItem('Products')) : '');
+        [...getProducts].map(dogs => {
+            const convertJson = JSON.parse(dogs);
+            const dogIndexMiniCart = convertJson.index;
+            const dogNameMiniCart = convertJson.name;
+            const dogDescMiniCart = convertJson.desc;
+            const dogPriceMiniCart = convertJson.price;
+            const dogPhotoMiniCart = convertJson.photo;
 
-        console.log(dogs.json());
+            const markuptItems = `
+                <div class="mini-cart__flex" data-index="${dogIndexMiniCart}">
+                    <div class="mini-cart__image">
+                        <img src="${dogPhotoMiniCart}" alt="${dogNameMiniCart}" title="${dogNameMiniCart}" />
+                    </div>
+                    <div class="mini-cart__wrapper">
+                        <div class="mini-cart__name">
+                            Nome: ${dogNameMiniCart}
+                        </div>
+                        <div class="mini-cart__desc">
+                            Características: ${dogDescMiniCart}
+                        </div>
+                        <div class="mini-cart__price">
+                            Preço: ${dogPriceMiniCart}
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.querySelector('.js--minicart').innerHTML += markuptItems;
+            document.querySelector('.mini-cart').classList.add('is--active');
+        })
+    };
 
-        const markuptItems = `
-            <div class="mini-cart__items" data-index="${dogIndexMiniCart}">
-                <div class="mini-cart__image">
-                    <img src="${dogPhotoMiniCart}" alt="${dogNameMiniCart}" title="${dogNameMiniCart}" />
-                </div>
-                <div class="mini-cart__name">
-                    Nome: ${dogNameMiniCart}
-                </div>
-                <div class="mini-cart__desc">
-                    Características: ${dogDescMiniCart}
-                </div>
-                <div class="mini-cart__price">
-                    Preço: ${dogPriceMiniCart}
-                </div>
-            </div>
-        `;
-        document.querySelector('.js--minicart').innerHTML += markuptItems;
-    })
+    updateMiniCart();
 
 })
 

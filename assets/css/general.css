@@ -121,6 +121,42 @@ body {
     fill: #fff;
 }
 
+.mini-cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fff;
+    width: 30%;
+    height: 100vh;
+    padding: 30px;
+    transition: all ease .5s;
+    transform: translateX(110%);
+}
+
+.mini-cart.is--active {
+    transform: translate(0);
+}
+
+.mini-cart .mini-cart__flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.mini-cart .mini-cart__image {
+    width: 30%;
+}
+
+.mini-cart .mini-cart__image img {
+    width: 100%;
+    height: auto;
+}
+
+.mini-cart .mini-cart__wrapper {
+    width: 60%;
+}
+
 @media only screen and (max-width: 767px) {
     .header {
         height: 150px;
