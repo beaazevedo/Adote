@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, viewport-fit=cover">
-        <title>Desafio 1</title>
+        <title>Desafio 2</title>
         <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/general.css">
@@ -12,57 +12,18 @@
 <body>
     <header class="header">
         <a href="/" class="header__bg">
-            <h1> Pincéis CO</h1>
+            <h1>Adote!</h1>
         </a>
     </header>
     <main>
-        <section class="target">
-            <div>
+        <section>
+            <div class="description">
                 <p>
-                    Sale !
+                    Quer um novo amigo?<br/>
+                    Aqui vai ter muita lindeza para você escolher por um <br/>preço unico: Muito amor! ❤️
                 </p>
             </div>
-        </section>
-        <section class="banners">
-            <div class="banners__flex">
-                <div class="banners__left">
-                    <img src="assets/img/banner_left.png" alt="Banner Left" tittle="Banner Left">
-                    <button class="banners__button">Buy Now</button>
-                </div>
-                <div class="banners__center">
-                    <article>
-                       <p>
-                        Tudo que você precisa em pincéis!
-                       </p>
-                       <a href="/">Veja mais</a>
-                    </article>
-                </div>
-                <div class="banners__right">
-                    <img src="assets/img/banner_right.png" alt="Banner Right" tittle="Banner Right">
-                    <button class="banners__button">Buy Now</button>
-                </div>
-            </div>
-        </section>
-        <section class="form">
-            <div>
-                <h2>
-                    Garanta 15% OFF
-                </h2>
-            </div>
-            <div>
-                <form class="form__content" id="form">
-                    <div class="form__input">
-						<div class="form__input-name">
-							<input name="form-name" class="form-data" type="text" id="name"  required placeholder="Qual seu nome?" >
-						</div>
-						<div class="form__input-email">	
-							<input name="form-email" class="form-data" type="email" id='email' required placeholder="E seu e-mail?">
-						</div>
-					</div>
-                    <div class="form__submit">
-                        <input id ="form_submit" type="submit" value="enviar" class="content__form-submit-button">
-                    </div>
-                </form>
+            <div class="insert-items">
             </div>
         </section>
     </main>
@@ -74,6 +35,9 @@
             </a>
         </div>
     </footer>
+    <div class="mini-cart">
+        <div class="mini-cart__items js--minicart"></div>
+    </div>
 </body>
-<script src="assets/js/teste.js"></script>
+<script src="assets/js/dogs.js"></script>
 </html>

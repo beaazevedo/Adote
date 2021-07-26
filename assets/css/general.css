@@ -1,217 +1,107 @@
 body {
     font-family: 'Otomanopee One', sans-serif;
     text-transform: uppercase;
+    overflow-x: hidden;
 }
 .header {
-    background: url("../img/bg.png") top no-repeat;
+    background: #00516c;
     background-size: 100%;
-    height: 400px;
+    padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .header__bg {
-    font-size: 40px;
+    font-size: 30px;
     text-decoration: none;
-    color: #000;
-    background: #fff;
+    color: #fff;
     padding: 10px;
-    border: 1px solid #000;
-}
-
-.target {
-    position: absolute;
-    left: 50%;
-    top: 305px;
-    transform: translate(-50%);
-    background: #f9c6b5;
-    color: #5e5f5f;
-    font-size: 80px;
     letter-spacing: 2px;
-    padding: 50px 100px;
-    text-shadow: 0.1em 0.1em 0.2em #9a9a9a;
+}
+
+.description {
+    text-align: center;
+    display: block;
+    color: #5e5f5f;
+    font-size: 26px;
+    line-height: 40px;
     z-index: 10;
+    padding: 40px 100px;
 }
 
-.banners__flex {
+.insert-items {
     display: flex;
-    max-height: 600px;
-    min-height: 600px;
-    z-index: 1;
-    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10%;
 }
 
-.banners__flex div {
-    background-size: cover;
+.insert-items div {
+    flex: 0 0 30%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.insert-items div img {
+    width: 100%;
+    max-width: 340px;
+    max-height: 340px;
     overflow: hidden;
 }
 
-.banners__left, .banners__right {
-    background-color: #bccacb;
-    width: 37%;
-    position: relative;
+.insert-items div h2 {
+    font-size: 26px;
+    margin: 10px 0;
 }
 
-.banners__left img {
-    position: absolute;
-    top: -60px;
-    left: -250px;
-}
-
-.banners__right img {
-    position: absolute;
-    top: 90px;
-    right: 0;
-    width: 100%;
-}
-
-.banners__center {
-    width: 26%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000!important;
-}
-
-.banners__center article p {
-    color: #f9c6b5;
-    font-size: 50px;
-    text-align: center;
-    letter-spacing: 2px;
-    text-shadow: 0.1em 0.1em 0.2em #f9c6b599;
-    position: relative;
-}
-
-.banners__center article p::after {
-    content: '';
-    position: absolute;
-    top: -60px;
-    left: 50%;
-    transform: translate(-50%);
-    width: 50px;
-    height: 6px;
-    background: #fff;
-}
-
-.banners__center article p::before {
-    content: '';
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translate(-50%);
-    width: 50px;
-    height: 6px;
-    background: #fff;
-}
-
-.banners__center article a {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%);
-    color: #fff;
+.insert-items div article, .insert-items div p {
     font-size: 16px;
-    text-decoration: none;
-    }
-
-.banners__center article a:hover {
-    color: #f9c6b5;
-}
-
-.banners__center article a::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    right: -15px;
-    width: 10px;
-    height: 10px;
-    border-top: 1px solid #fff;
-    border-right: 1px solid #fff;
-    transform: rotate(45deg);
-    transition: all ease 0.4s;
-}
-
-.banners__center article a:hover::after {
-    border-top: 1px solid #f9c6b5;
-    border-right: 1px solid #f9c6b5;
-}
-
-.banners__button {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    top: 300px;
-    width: 400px;
-    height: 80px;
-    background: #f9c6b5;
-    color: #000;
-    border: 3px solid #000;
-    font-size: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all ease 0.4s;
-}
-
-.banners__button:hover {
-    background: #000;
-    color: #f9c6b5;
-    
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 70px 0;
-}
-
-.form h2 {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-.form__input {
-    display: flex;
-}
-
-.form__content {
     position: relative;
+    line-height: 20px;
 }
 
-.form__input input {
-    background: #f9c6b5;
-    height: 50px;
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #5e5f5f;
-    font-family: 'Otomanopee One', sans-serif;
+.insert-items div p:before {
+    content: 'Preço: ';
+    font-size: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 20px;
 }
 
-.form__input #name {
-    border-right: none;
+.insert-items div article:before {
+    content: 'Caracteristica: ';
+    font-size: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 20px;
 }
 
-#form_submit {
-    position: absolute;
-    bottom: -40px;
-    right: -10px;
-    padding: 15px;
-    width: 170px;
-    background: #f9c6b5;
-    color: black;
-    font-family: 'Otomanopee One', sans-serif;
+.insert-items div button {
+    background: #ff9400;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    width: 200px;
+    height: 46px;
     text-transform: uppercase;
-    border: 1px solid #5e5f5f;
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    margin-top: 20px ;
+    font-family: 'Otomanopee One', sans-serif;
+    transition: all ease 0.4s;
     cursor: pointer;
+}
+
+.insert-items div button:hover {
+    background: #00516c;
 }
 
 .footer div {
-    background: #000;
+    background: #00516c;
     display: flex;
     align-items: center;
     justify-content: space-between;
